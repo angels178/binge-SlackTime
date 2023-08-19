@@ -11,6 +11,9 @@ function Navbar() {
         <li>
           <Link to="/shows">Index</Link>
         </li>
+        <li>
+          <Link to="/shows/new">Add Favorite Show</Link>
+        </li>
       </ul>
     </nav>
   );

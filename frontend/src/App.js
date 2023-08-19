@@ -6,6 +6,7 @@ import Show from "./components/Show/Show";
 import Navbar from "./components/Navbar/Navbar";
 import Shows from "./components/Shows/Shows";
 import EditForm from "./components/EditForm/EditForm";
+import NewForm from "./components/NewForm/NewForm";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/shows" element={<Shows />} />
         <Route path="/shows/:id" element={<Show />} />
         <Route path="/shows/:id/edit" element={<EditForm />} />
+        <Route path="/shows/new" element={<NewForm />} />
       </Routes>
     </Router>
   )

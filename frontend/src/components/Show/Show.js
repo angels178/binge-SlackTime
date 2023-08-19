@@ -30,6 +30,7 @@ function Show() {
       try {
         let result = await axios.delete(`${api}/shows/${id}`);
         const { name } = result.data;
+        
         alert(`${name} Has Been Deleted!`);
         navigate(`${api}/shows`);
       } catch (error) {
@@ -37,7 +38,7 @@ function Show() {
       }
     }
   };
-  
+
   return (
     <div>
       <h1>Show</h1>

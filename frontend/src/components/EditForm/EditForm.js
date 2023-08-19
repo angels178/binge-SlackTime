@@ -30,7 +30,7 @@ function EditForm() {
     };
 
     fetchSingleShow();
-  }, []);
+  }, [id]);
 
   function handleOnChange(id, value) {
     setEditShow({ ...editShow, [id]: value });
@@ -65,7 +65,7 @@ function EditForm() {
       <div>
         <form onSubmit={handleEditSubmit}>
           <div>
-            <label>Name</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
@@ -78,7 +78,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>Seasons</label>
+            <label htmlFor="num_seasons">Season</label>
             <input
               type="number"
               id="num_seasons"
@@ -91,7 +91,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>Episodes</label>
+            <label htmlFor="num_episode">Episode</label>
             <input
               type="number"
               id="num_episodes"
@@ -104,7 +104,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>Date</label>
+            <label htmlFor="date">Date</label>
             <input
               type="date"
               id="released_date"
@@ -117,7 +117,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>Description</label>
+            <label htmlFor="description">Description</label>
             <textarea
               type="text"
               id="description"
@@ -130,7 +130,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>Category</label>
+            <label htmlFor="category">Category</label>
             <input
               type="text"
               id="category"
@@ -143,7 +143,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>Language</label>
+            <label htmlFor="language">Language</label>
             <input
               type="text"
               id="language"
@@ -156,11 +156,13 @@ function EditForm() {
           </div>
 
           <div>
-            <label>rating</label>
+            <label htmlFor="rating">rating</label>
             <input
               type="number"
               id="rating"
               name="rating"
+              min="0"
+              max="5"
               value={editShow.rating}
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.value)
@@ -169,7 +171,7 @@ function EditForm() {
           </div>
 
           <div>
-            <label>favorite</label>
+            <label htmlFor="is_favorite">favorite</label>
             <input
               type="checkbox"
               id="is_favorite"
