@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Shows from "./components/Shows/Shows";
 import EditForm from "./components/EditForm/EditForm";
 import NewForm from "./components/NewForm/NewForm";
+import FourOFour from "./pages/FourOFour";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/shows/:id" element={<Show />} />
         <Route path="/shows/:id/edit" element={<EditForm />} />
         <Route path="/shows/new" element={<NewForm />} />
+        <Route path="/*" element={<FourOFour />} />
       </Routes>
     </Router>
   )

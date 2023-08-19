@@ -24,15 +24,14 @@ function Show() {
 
   const deletedSnack = async () => {
     const deleteConfirmation = window.confirm(
-      "Are you sure you want to delete "
+      `Are you sure you want to delete ${singleShow.name}?`
     );
     if (deleteConfirmation) {
       try {
-        let result = await axios.delete(`${api}/shows/${id}`);
-        const { name } = result.data;
-        
-        alert(`${name} Has Been Deleted!`);
-        navigate(`${api}/shows`);
+        await axios.delete(`${api}/shows/${id}`);
+
+        alert(`${singleShow.name} Has Been Deleted!`);
+        navigate("/shows");
       } catch (error) {
         console.log(error);
       }
