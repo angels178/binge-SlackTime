@@ -25,6 +25,9 @@ function EditForm() {
       try {
         let result = await axios.get(`${api}/shows/${id}`);
 
+        const date = new Date(result.data.released_date);
+        result.data.released_date = date.toISOString().split("T")[0];
+
         setEditShow(result.data);
       } catch (error) {
         navigate("/404");
@@ -75,6 +78,21 @@ function EditForm() {
               id="name"
               name="name"
               value={editShow.name}
+              onChange={(event) =>
+                handleOnChange(event.target.id, event.target.value)
+              }
+            />
+          </div>
+
+          <div className="form-group d-flex flex-column mt-4">
+            <label htmlFor="url">
+              <span>Image Url</span>
+            </label>
+            <input
+              type="text"
+              id="url"
+              name="url"
+              value={editShow.url}
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.value)
               }

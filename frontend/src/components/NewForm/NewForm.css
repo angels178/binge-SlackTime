@@ -13,6 +13,10 @@
     width: 50%;
 }
 
+.new-container-form label span {
+    font-weight: bold;
+}
+
 /* .new-container-form label {
     margin-top: 10px;
     margin-right: 20px;
