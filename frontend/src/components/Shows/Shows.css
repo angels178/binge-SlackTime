@@ -1,0 +1,42 @@
+.shows-container {
+    max-width: 950px;
+    margin: 0 auto;
+    font-size: large;
+}
+
+.shows-container-table {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#shows {
+    border-collapse: collapse;
+}
+
+#shows td,
+#shows th {
+    padding: 10px;
+    font-size: 20px;
+    max-width: max-content;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+#shows tr:nth-child(odd) {
+    background-color: beige;
+}
+
+#shows th {
+    background-color: gray;
+}
+
+#logs tr:hover {
+    background-color: black;
+}
+
+#shows td a {
+    text-decoration: none;
+    color: brown;
+}

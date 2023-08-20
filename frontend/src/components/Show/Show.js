@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./Show.css";
 
 function Show() {
   const [singleShow, setSingleShow] = useState(null);
@@ -38,6 +39,22 @@ function Show() {
     }
   };
 
+  const releasedDate = () => {
+    let date = singleShow.released_date;
+    const newDate = new Date(date);
+    const formattedDate = newDate.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
+    return formattedDate;
+  };
+
+  //   const handleButton=(id)=>{
+  // if()
+  //   }
+
   return (
     <div>
       <h1>Show</h1>
@@ -48,18 +65,18 @@ function Show() {
               <img src={singleShow.url} alt={singleShow.name} height="500px" />
             </div>
 
-            <div>
-              <p>Name: {singleShow.name}</p>
-              <p>Seasons: {singleShow.num_seasons}</p>
-              <p>Episodes: {singleShow.num_episodes} </p>
-              <p>Date: {singleShow.released_date}</p>
-              <p>Description: {singleShow.description}</p>
-              <p>category: {singleShow.category}</p>
-              <p>language: {singleShow.language}</p>
-              <p>rating: {singleShow.rating}</p>
-              <p>favorite: {singleShow.is_favorite ? "true" : "false"}</p>
+            <div className="show-container">
+              <p><span>Name:</span> {singleShow.name}</p>
+              <p><span>Seasons:</span> {singleShow.num_seasons}</p>
+              <p><span>Episodes:</span> {singleShow.num_episodes} </p>
+              <p><span>Date:</span> {releasedDate()}</p>
+              <p><span>Description:</span> {singleShow.description}</p>
+              <p><span>Category:</span> {singleShow.category}</p>
+              <p><span>Language:</span> {singleShow.language}</p>
+              <p><span>Rating:</span> {singleShow.rating}</p>
+              <p><span>Favorite:</span> {singleShow.is_favorite ? "⭐️" : "❌"}</p>
             </div>
-            <div>
+            <div className="show-buttons">
               <button onClick={() => navigate("/shows")}>Back</button>
               <button onClick={() => navigate(`/shows/${id}/edit`)}>
                 Edit

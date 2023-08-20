@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./EditForm.css";
 
 function EditForm() {
   const [editShow, setEditShow] = useState({
     name: "",
+    url: "",
     num_seasons: "",
     num_episodes: "",
     released_date: "",
@@ -25,7 +27,7 @@ function EditForm() {
 
         setEditShow(result.data);
       } catch (error) {
-        console.log(error);
+        navigate("/404");
       }
     };
 
@@ -63,9 +65,11 @@ function EditForm() {
     <div>
       <h1>Edit</h1>
       <div>
-        <form onSubmit={handleEditSubmit}>
-          <div>
-            <label htmlFor="name">Name</label>
+        <form onSubmit={handleEditSubmit} className="edit-container-form">
+          <div className="form-group d-flex flex-column mt-4">
+            <label htmlFor="name">
+              <span>Name</span>
+            </label>
             <input
               type="text"
               id="name"
@@ -77,8 +81,10 @@ function EditForm() {
             />
           </div>
 
-          <div>
-            <label htmlFor="num_seasons">Season</label>
+          <div className="form-group d-flex flex-column mt-4">
+            <label htmlFor="num_seasons">
+              <span>Season</span>
+            </label>
             <input
               type="number"
               id="num_seasons"
@@ -90,8 +96,10 @@ function EditForm() {
             />
           </div>
 
-          <div>
-            <label htmlFor="num_episode">Episode</label>
+          <div className="form-group d-flex flex-column mt-4">
+            <label htmlFor="num_episode">
+              <span>Episode</span>
+            </label>
             <input
               type="number"
               id="num_episodes"
@@ -103,8 +111,10 @@ function EditForm() {
             />
           </div>
 
-          <div>
-            <label htmlFor="date">Date</label>
+          <div className="form-group d-flex flex-column mt-4">
+            <label htmlFor="date">
+              <span>Date</span>
+            </label>
             <input
               type="date"
               id="released_date"
@@ -116,8 +126,10 @@ function EditForm() {
             />
           </div>
 
-          <div>
-            <label htmlFor="description">Description</label>
+          <div className="form-group d-flex flex-column mt-4">
+            <label htmlFor="description">
+              <span>Description</span>
+            </label>
             <textarea
               type="text"
               id="description"
@@ -129,7 +141,7 @@ function EditForm() {
             />
           </div>
 
-          <div>
+          <div className="form-group d-flex flex-column mt-4">
             <label htmlFor="category">Category</label>
             <input
               type="text"
@@ -142,7 +154,7 @@ function EditForm() {
             />
           </div>
 
-          <div>
+          <div className="form-group d-flex flex-column mt-4">
             <label htmlFor="language">Language</label>
             <input
               type="text"
@@ -155,7 +167,7 @@ function EditForm() {
             />
           </div>
 
-          <div>
+          <div className="form-group d-flex flex-column mt-4">
             <label htmlFor="rating">rating</label>
             <input
               type="number"
@@ -180,10 +192,13 @@ function EditForm() {
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.checked)
               }
+              className="m-2"
             />
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" className="offset-5 mt-3">
+            Submit
+          </button>
         </form>
       </div>
     </div>

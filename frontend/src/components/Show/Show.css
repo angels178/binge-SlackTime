@@ -1,0 +1,42 @@
+img {
+   position: absolute;
+   top: 50%;
+   left: 30%;
+   transform: translate(-50%, -50%);
+}
+
+.show-container {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: blanchedalmond;
+}
+
+.show-container p {
+    margin: 10px;
+}
+
+.show-container p span {
+    font-weight: bold;
+}
+
+.show-buttons {
+    position: absolute; 
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    margin-right: 10px;
+    border-radius: 7px;
+    font-size: x-large;
+    background-color: #9E9FA5;
+    color: white;
+}
+
+button:hover {
+    background-color: #0069d9;
+    color: white;
+}

@@ -1,0 +1,36 @@
+.edit-container-form {
+    background-color: blanchedalmond;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.edit-container-form div {
+    margin: 5px auto;
+    width: 50%;
+}
+
+.edit-container-form textarea {
+    width: 430px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.edit-container-form button  {
+    color: white;
+    border-radius: 7px;
+    background-color: #9E9FA5;
+    margin-bottom: 20px;
+    
+}
+
+.edit-container-form button:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.edit-container-form label span {
+    font-weight: bold;
+}
