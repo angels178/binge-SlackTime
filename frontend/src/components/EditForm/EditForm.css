@@ -34,3 +34,21 @@
 .edit-container-form label span {
     font-weight: bold;
 }
+
+@media (max-width: 390px) {
+
+    .edit-container-form {
+      width: 100%;
+      max-width: 390px;
+    }
+    
+    .edit-container-form div {
+      width: 90%; 
+    }
+  
+    .edit-container-form textarea,
+    .edit-container-form button {
+      width: 100%;
+    }
+  
+  }

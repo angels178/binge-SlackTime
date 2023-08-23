@@ -1,7 +1,7 @@
 .new-container-form {
     background-color: bisque;
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
@@ -9,7 +9,7 @@
 }
 
 .new-container-form div {
-    margin: 10px auto;
+    margin: 0px auto;
     width: 50%;
 }
 
@@ -44,3 +44,24 @@
     background-color: #0069d9;
     border-color: #0062cc;
 }
+
+
+@media (max-width: 390px) {
+
+    .new-container-form {
+      width: 100%;
+      max-width: 390px;
+    }
+    
+    .new-container-form div {
+      width: 90%; 
+    }
+  
+    .new-container-form textarea,
+    .new-container-form button {
+      width: 100%;
+    }
+  
+}
+
+  

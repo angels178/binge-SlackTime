@@ -30,6 +30,7 @@
 
 #shows th {
     background-color: gray;
+    color: aliceblue;
 }
 
 #logs tr:hover {
@@ -38,5 +39,11 @@
 
 #shows td a {
     text-decoration: none;
-    color: brown;
+    color: #366ED8;
+}
+
+h1 {
+    font-size: xx-large;
+    margin-left: 40px;
+    margin-top: 10px;
 }
