@@ -27,6 +27,7 @@ function Show() {
     const deleteConfirmation = window.confirm(
       `Are you sure you want to delete ${singleShow.name}?`
     );
+    
     if (deleteConfirmation) {
       try {
         await axios.delete(`${api}/shows/${id}`);
