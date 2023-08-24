@@ -51,10 +51,6 @@ function Show() {
     return formattedDate;
   };
 
-  //   const handleButton=(id)=>{
-  // if()
-  //   }
-
   return (
     <div>
       <h1>Show</h1>
