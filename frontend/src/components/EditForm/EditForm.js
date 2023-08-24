@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EditForm.css";
+import API from "../../common/Api/Api";
 
 function EditForm() {
   const [editShow, setEditShow] = useState({
@@ -16,14 +17,13 @@ function EditForm() {
     rating: "",
     is_favorite: false,
   });
-  let api = process.env.REACT_APP_API_URL;
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSingleShow = async () => {
       try {
-        let result = await axios.get(`${api}/shows/${id}`);
+        let result = await axios.get(`${API}/${id}`);
 
         const date = new Date(result.data.released_date);
         result.data.released_date = date.toISOString().split("T")[0];
@@ -35,7 +35,7 @@ function EditForm() {
     };
 
     fetchSingleShow();
-  }, [id]);
+  }, [id, navigate]);
 
   function handleOnChange(id, value) {
     setEditShow({ ...editShow, [id]: value });
@@ -45,7 +45,7 @@ function EditForm() {
     event.preventDefault();
 
     try {
-      let result = await axios.put(`${api}/shows/${id}`, editShow);
+      let result = await axios.put(`${API}/${id}`, editShow);
 
       const { name } = result.data;
 
@@ -81,6 +81,7 @@ function EditForm() {
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.value)
               }
+              required
             />
           </div>
 
@@ -96,6 +97,7 @@ function EditForm() {
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.value)
               }
+              required
             />
           </div>
 
@@ -203,6 +205,7 @@ function EditForm() {
           <div>
             <label htmlFor="is_favorite">favorite</label>
             <input
+              required
               type="checkbox"
               id="is_favorite"
               name="is_favorite"

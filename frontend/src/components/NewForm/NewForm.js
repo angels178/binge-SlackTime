@@ -53,7 +53,9 @@ function NewForm() {
       <div>
         <form onSubmit={handleSubmit} className="new-container-form">
           <div className="form-group d-flex flex-column mt-4">
-            <label htmlFor="name"><span>Name</span></label>
+            <label htmlFor="name">
+              <span>Name</span>
+            </label>
             <input
               type="text"
               id="name"
@@ -62,6 +64,7 @@ function NewForm() {
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.value)
               }
+              required
             />
           </div>
 
@@ -78,11 +81,14 @@ function NewForm() {
               onChange={(event) =>
                 handleOnChange(event.target.id, event.target.value)
               }
+              required
             />
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="num_seasons"><span>Season</span></label>
+            <label htmlFor="num_seasons">
+              <span>Season</span>
+            </label>
             <input
               type="number"
               id="num_seasons"
@@ -95,7 +101,9 @@ function NewForm() {
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="num_episode"><span>Episode</span></label>
+            <label htmlFor="num_episode">
+              <span>Episode</span>
+            </label>
             <input
               type="number"
               id="num_episodes"
@@ -108,7 +116,9 @@ function NewForm() {
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="date"><span>Date</span></label>
+            <label htmlFor="date">
+              <span>Date</span>
+            </label>
             <input
               type="date"
               id="released_date"
@@ -121,7 +131,9 @@ function NewForm() {
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="description"><span>Description</span></label>
+            <label htmlFor="description">
+              <span>Description</span>
+            </label>
             <textarea
               type="text"
               id="description"
@@ -134,7 +146,9 @@ function NewForm() {
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="category"><span>Category</span></label>
+            <label htmlFor="category">
+              <span>Category</span>
+            </label>
             <input
               type="text"
               id="category"
@@ -147,7 +161,9 @@ function NewForm() {
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="language"><span>Language</span></label>
+            <label htmlFor="language">
+              <span>Language</span>
+            </label>
             <input
               type="text"
               id="language"
@@ -160,7 +176,9 @@ function NewForm() {
           </div>
 
           <div className="form-group d-flex flex-column">
-            <label htmlFor="rating"><span>Rating</span></label>
+            <label htmlFor="rating">
+              <span>Rating</span>
+            </label>
             <input
               type="number"
               id="rating"
@@ -175,8 +193,11 @@ function NewForm() {
           </div>
 
           <div>
-            <label htmlFor="is_favorite"><span>Favorite</span></label>
+            <label htmlFor="is_favorite">
+              <span>Favorite</span>
+            </label>
             <input
+              required
               type="checkbox"
               id="is_favorite"
               name="is_favorite"
