@@ -23,7 +23,7 @@ function NewForm() {
 
     if (id === "num_seasons") {
       if (value === "") {
-        setNewShow({ ...newShow, num_seasons: "" });
+        setNewShow({ ...newShow, num_seasons: null });
       } else {
         setNewShow({ ...newShow, num_seasons: Number(value) });
       }

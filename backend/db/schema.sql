@@ -8,7 +8,7 @@ CREATE TABLE shows (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     url TEXT,
-    num_seasons INT NOT NULL,
+    num_seasons INT NULL,
     num_episodes INT,
     released_date DATE,
     description TEXT,
