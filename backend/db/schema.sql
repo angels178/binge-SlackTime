@@ -4,13 +4,13 @@ CREATE DATABASE shows;
 
 \c shows;
 
-CREATE TABLE public.show (
+CREATE TABLE shows (
     id SERIAL PRIMARY KEY,
-    title TEXT NOT NULL,
-    image_url TEXT
-    num_seasons INT,
+    name TEXT NOT NULL,
+    url TEXT,
+    num_seasons INT NULL,
     num_episodes INT,
-    released_date DATE NOT NULL,
+    released_date DATE,
     description TEXT,
     category TEXT,
     language TEXT,

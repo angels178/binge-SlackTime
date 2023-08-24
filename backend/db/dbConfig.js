@@ -16,7 +16,7 @@ db.connect()
     console.log("Postgres connection established");
     obj.done();
   })
-  .catch((e) => {
+  .catch((error) => {
     console.log("ERROR:", error.message || error);
   });
 
