@@ -2,8 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Shows.css";
-import Pagination from "../../common/Pagination/Pagination";
-import Overlay from "../../common/Overlay/Overlay";
+import Pagination from "../common/Pagination/Pagination";
+import Overlay from "../common/Overlay/Overlay";
+import Api from "../common/Api/Api";
 
 function Shows() {
   let api = process.env.REACT_APP_API_URL;
@@ -20,7 +21,7 @@ function Shows() {
   async function fetchShowsData() {
     try {
       setIsLoading(true);
-      let result = await axios.get(`${api}/shows`);
+      let result = await axios.get(`${Api}`);
 
       setShows(result.data);
       setIsLoading(false);
@@ -76,14 +77,13 @@ function Shows() {
                 })}
               </tbody>
               <>
-               <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={(page) => setCurrentPage(page)}
-            />
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={(page) => setCurrentPage(page)}
+                />
               </>
             </table>
-           
           </div>
         </div>
       </div>

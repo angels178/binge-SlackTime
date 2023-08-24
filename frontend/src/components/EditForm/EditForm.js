@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EditForm.css";
-import API from "../../common/Api/Api";
+import Api from "../common/Api/Api";
 
 function EditForm() {
   const [editShow, setEditShow] = useState({
@@ -23,7 +23,7 @@ function EditForm() {
   useEffect(() => {
     const fetchSingleShow = async () => {
       try {
-        let result = await axios.get(`${API}/${id}`);
+        let result = await axios.get(`${Api}/${id}`);
 
         const date = new Date(result.data.released_date);
         result.data.released_date = date.toISOString().split("T")[0];
@@ -35,7 +35,7 @@ function EditForm() {
     };
 
     fetchSingleShow();
-  }, [id, navigate]);
+  }, [id]);
 
   function handleOnChange(id, value) {
     setEditShow({ ...editShow, [id]: value });
@@ -45,7 +45,7 @@ function EditForm() {
     event.preventDefault();
 
     try {
-      let result = await axios.put(`${API}/${id}`, editShow);
+      let result = await axios.put(`${Api}/${id}`, editShow);
 
       const { name } = result.data;
 

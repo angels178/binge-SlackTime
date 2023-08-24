@@ -2,10 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Show.css";
+import Api from "../common/Api/Api";
 
 function Show() {
   const [singleShow, setSingleShow] = useState(null);
-  let api = process.env.REACT_APP_API_URL;
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ function Show() {
 
   async function fetchSingleShow() {
     try {
-      let result = await axios.get(`${api}/shows/${id}`);
+      let result = await axios.get(`${Api}/${id}`);
 
       setSingleShow(result.data);
     } catch (error) {
@@ -27,10 +27,10 @@ function Show() {
     const deleteConfirmation = window.confirm(
       `Are you sure you want to delete ${singleShow.name}?`
     );
-    
+
     if (deleteConfirmation) {
       try {
-        await axios.delete(`${api}/shows/${id}`);
+        await axios.delete(`${Api}/${id}`);
 
         alert(`${singleShow.name} Has Been Deleted!`);
         navigate("/shows");

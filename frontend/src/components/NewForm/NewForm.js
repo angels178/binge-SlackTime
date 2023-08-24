@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewForm.css";
+import Api from "../common/Api/Api";
 
 function NewForm() {
   const [newShow, setNewShow] = useState({
@@ -15,7 +16,6 @@ function NewForm() {
     rating: "",
     is_favorite: false,
   });
-  let api = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
   function handleOnChange(id, value) {
@@ -36,7 +36,7 @@ function NewForm() {
     event.preventDefault();
 
     try {
-      let result = await axios.post(`${api}/shows`, newShow);
+      let result = await axios.post(`${Api}`, newShow);
       console.log(result.data);
 
       alert(`${newShow.name} is added!`);
