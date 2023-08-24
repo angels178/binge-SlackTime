@@ -1,3 +1,7 @@
 .page-buttons {
     font-size: medium;
 }
+
+.page-buttons span {
+    margin-right: 10px;
+}

@@ -10,7 +10,7 @@ function Shows() {
 
   const [shows, setShows] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [showsPerPage, setShowsPerPage] = useState(5);
+  const [showsPerPage, setShowsPerPage] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

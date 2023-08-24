@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-sm text-bg-secondary font-link">
+    <nav className="navbar navbar-expand-lg text-bg-secondary font-link">
      
       <div className="links-list collapse navbar-collapse d-flex flex-wrap">
         <ul className="navbar-nav ml-auto d-flex-wrap" id="navbarNavAltMarkup">
